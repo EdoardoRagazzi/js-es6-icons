@@ -97,4 +97,25 @@ const icons = [
         family: 'fas',
     },
 ];
+//---------------------MILESTONE-1------------------------//
+icons.forEach(element => {
+
+    const { name, prefix, type, family } = element;
+
+    const elementHTML =
+        `
+                <div class="col" id="box">
+                    <div class="box shadow">
+                        <i class="${icons.family} ${icons.prefix}${icons.name} fa-4x"></i>
+                        <div class="title"> ${icons.name} </div>
+                    </div>
+                </div>
+        `
+    document.getElementById('box').innerHTML += elementHTML
+
+
+});
+
+
+
 // Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
