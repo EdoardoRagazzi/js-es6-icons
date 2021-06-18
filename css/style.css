@@ -6,6 +6,7 @@
 }
 body{
     background-color: #DDDDDD;
+    overflow: hidden;
 }
 .header{
     height:70px;
@@ -30,6 +31,10 @@ body{
     border-radius: 10%;
     box-shadow: lightgrey;
     text-align: center;
-    line-height: 150px;
-    shodow
+    line-height: 160px;
+}
+.icons{
+    overflow-x: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 140px);
 }
