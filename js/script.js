@@ -97,21 +97,47 @@ const icons = [
         family: 'fas',
     },
 ];
+print(icons);
 //---------------------MILESTONE-1------------------------//
-icons.forEach(element => {
+function print(array) {
+    array.forEach((element) => {
+        console.log(element);
 
-    const { name, prefix, type, family } = element;
+        const { name, prefix, family } = element;
 
-    const elementHTML =
-        `<div class="col">
-                    <div class="box shadow">
-                        <i class="${element.family} ${element.prefix}${element.name} fa-4x"></i>
-                        <div class="title text-uppercase pt-3"> ${element.name} </div>
-                    </div>
-         </div> `
-    document.getElementById('box').innerHTML += elementHTML;
+        const elementHTML = `
+          <div>
+            <i class="${family} ${prefix}${name}"></i>
+            <div class="title">${name.toUpperCase()}</div>
+          </div>
+          `;
 
-});
+        document.getElementById('icons').innerHTML += elementHTML;
+    });
+};
+
+
+//-----------------MILESTONE 2 -----------------//
+
+// const coloredArray = icons.map((element) => {
+//     const { name, prefix, type, family } = element;
+//     console.log(element);
+//     let color = 'purple';
+//     if (element.type == 'animal') {
+//         color = 'green';
+//     } else if (element.type == 'vegetable') {
+//         color = 'orange';
+//     }
+//     return {
+//         ...element,  //Spread tutti gli elementi di quell'oggetto
+//         color
+//     }
+
+// });
+
+
+
+
 
 
 

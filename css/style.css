@@ -5,7 +5,6 @@
     font-family: 'Big Shoulders Stencil Display', cursive;
 }
 body{
-    background-color: #DDDDDD;
     overflow: hidden;
 }
 .header{
@@ -22,19 +21,32 @@ body{
     background-color: #29B1DD;
     height:70px;
     width:100%; 
-    line-height: 70px;     
+    line-height: 70px;   
+    display: flex;
+    align-items: center;  
+    justify-content: center;
 }
-.box{
-    background-color:white;
-    height: 150px;
-    width: 200px;
-    border-radius: 10%;
-    box-shadow: lightgrey;
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: calc(100% - 140px);
+    overflow-y: scroll;
+    font-size: 200%;
+    background-color: rgb(221, 221, 221);
+  }
+  .icons > div {
+    flex-basis: calc(100% / 6 - 20px );
+    min-width: 150px;
+    margin: 20px;
+    padding: 20px;
+    background: rgb(245, 245, 245);
+    border-radius: 10px;
     text-align: center;
-    line-height: 160px;
-}
-.icons{
-    overflow-x: auto;
-    overflow-x: hidden;
-    height: calc(100vh - 140px);
-}
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0, 0.5));
+  }
+  .icons .title {
+    font-size: 14px;
+  }
