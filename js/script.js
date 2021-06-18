@@ -123,6 +123,7 @@ select.addEventListener("change", function () {
 
 });
 
+
 //---------------------MILESTONE-1---------WITH FUNCTION---------------//
 function colorIcons(array) {
     const coloredArray = icons.map((element) => {
