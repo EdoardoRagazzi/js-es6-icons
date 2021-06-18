@@ -103,16 +103,13 @@ icons.forEach(element => {
     const { name, prefix, type, family } = element;
 
     const elementHTML =
-        `
-                <div class="col" id="box">
+        `<div class="col">
                     <div class="box shadow">
-                        <i class="${icons.family} ${icons.prefix}${icons.name} fa-4x"></i>
-                        <div class="title"> ${icons.name} </div>
+                        <i class="${element.family} ${element.prefix}${element.name} fa-4x"></i>
+                        <div class="title text-uppercase pt-3"> ${element.name} </div>
                     </div>
-                </div>
-        `
-    document.getElementById('box').innerHTML += elementHTML
-
+         </div> `
+    document.getElementById('box').innerHTML += elementHTML;
 
 });
 
