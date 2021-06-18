@@ -97,6 +97,7 @@ const icons = [
         family: 'fas',
     },
 ];
+//-----------------MILESTONE 2 -----------------//
 const coloredArray = icons.map((element) => {
 
     console.log(element);
@@ -114,9 +115,9 @@ const coloredArray = icons.map((element) => {
 });
 print(coloredArray);
 
-//---------------------MILESTONE-1------------------------//
+//---------------------MILESTONE-1---------WITH FUNCTION---------------//
 function print(array) {
-    document.getElementById('icons').innerHTML = '';
+    // document.getElementById('icons').innerHTML = ' ';
 
     array.forEach((element) => {
         console.log(element);
@@ -134,8 +135,5 @@ function print(array) {
     });
 };
 
-
-//-----------------MILESTONE 2 -----------------//
-
-
 // Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
+//--------------------MILLESTONE 3---------------------//
