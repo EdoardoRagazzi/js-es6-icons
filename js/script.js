@@ -97,27 +97,53 @@ const icons = [
         family: 'fas',
     },
 ];
-//-----------------MILESTONE 2 -----------------//
-const coloredArray = icons.map((element) => {
 
-    console.log(element);
-    let color = 'purple';
-    if (element.type == 'animal') {
-        color = 'green';
-    } else if (element.type == 'vegetable') {
-        color = 'orange';
-    }
-    return {
-        ...element,  //Spread tutti gli elementi di quell'oggetto
-        color
-    }
-
-});
+const coloredArray = colorIcons(icons)
 print(coloredArray);
 
+// CREAZIONE DI UN NUOVO ARRAY CON CICLO FOR EACH PER SELEZIONARE LE VARIE TIPOLOGIE 
+const types = [];
+icons.forEach((element) => {
+    if (!types.includes(element.type)) {
+        types.push(element.type)
+        document.getElementById('type').innerHTML += `<li><button class="dropdown-item" id="type" type="button">${element.type}</button></li>`;
+    }
+});
+console.log(types);
+let select = document.getElementById('type');
+console.log(select);
+
+select.addEventListener("change", function () {
+    const valoreSelect = select.value;
+    console.log(valoreSelect);
+    const filteredIcons = icons.filter((element) => {
+        return element.type == valoreSelect;
+    });
+    print(filteredIcons);
+
+});
+
 //---------------------MILESTONE-1---------WITH FUNCTION---------------//
+function colorIcons(array) {
+    const coloredArray = icons.map((element) => {
+
+        console.log(element);
+        let color = 'purple';
+        if (element.type == 'animal') {
+            color = 'green';
+        } else if (element.type == 'vegetable') {
+            color = 'orange';
+        }
+        return {
+            ...element,  //Spread tutti gli elementi di quell'oggetto
+            color
+        }
+
+    });
+    return coloredArray;
+}
 function print(array) {
-    // document.getElementById('icons').innerHTML = ' ';
+    document.getElementById('icons').innerHTML = '';
 
     array.forEach((element) => {
         console.log(element);
@@ -134,6 +160,8 @@ function print(array) {
         document.getElementById('icons').innerHTML += elementHTML;
     });
 };
+//-----------------MILESTONE 2 -----------------//
+
 
 // Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 //--------------------MILLESTONE 3---------------------//
