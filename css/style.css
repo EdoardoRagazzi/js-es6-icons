@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: 'Big Shoulders Stencil Display', cursive;
 }
+body{
+    background-color: #DDDDDD;
+}
 .header{
     height:70px;
     width: 100%;
@@ -22,7 +25,6 @@
 }
 .box{
     background-color:white;
-    border: 1px solid black;
     height: 150px;
     width: 200px;
     border-radius: 10%;
