@@ -97,17 +97,35 @@ const icons = [
         family: 'fas',
     },
 ];
-print(icons);
+const coloredArray = icons.map((element) => {
+
+    console.log(element);
+    let color = 'purple';
+    if (element.type == 'animal') {
+        color = 'green';
+    } else if (element.type == 'vegetable') {
+        color = 'orange';
+    }
+    return {
+        ...element,  //Spread tutti gli elementi di quell'oggetto
+        color
+    }
+
+});
+print(coloredArray);
+
 //---------------------MILESTONE-1------------------------//
 function print(array) {
+    document.getElementById('icons').innerHTML = '';
+
     array.forEach((element) => {
         console.log(element);
-
-        const { name, prefix, family } = element;
+        //--------------destructuring-------------------//
+        const { color, name, prefix, family } = element;
 
         const elementHTML = `
           <div>
-            <i class="${family} ${prefix}${name}"></i>
+            <i class="${family} ${prefix}${name}" style="color:${color}" ></i>
             <div class="title">${name.toUpperCase()}</div>
           </div>
           `;
@@ -118,27 +136,6 @@ function print(array) {
 
 
 //-----------------MILESTONE 2 -----------------//
-
-// const coloredArray = icons.map((element) => {
-//     const { name, prefix, type, family } = element;
-//     console.log(element);
-//     let color = 'purple';
-//     if (element.type == 'animal') {
-//         color = 'green';
-//     } else if (element.type == 'vegetable') {
-//         color = 'orange';
-//     }
-//     return {
-//         ...element,  //Spread tutti gli elementi di quell'oggetto
-//         color
-//     }
-
-// });
-
-
-
-
-
 
 
 // Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
