@@ -101,27 +101,46 @@ const icons = [
 const coloredArray = colorIcons(icons)
 print(coloredArray);
 
-// CREAZIONE DI UN NUOVO ARRAY CON CICLO FOR EACH PER SELEZIONARE LE VARIE TIPOLOGIE 
+// CREAZIONE DI UN NUOVO ARRAY CON CICLO FOR EACH PER SELEZIONARE LE VARIE TIPOLOGIE
 const types = [];
 icons.forEach((element) => {
     if (!types.includes(element.type)) {
         types.push(element.type)
-        document.getElementById('type').innerHTML += `<li><button class="dropdown-item" id="type" type="button">${element.type}</button></li>`;
+        document.getElementById('type').innerHTML += `<li><button class="dropdown-item" id="${element.type}" type="button">${element.type}</button></li>`;
     }
 });
-console.log(types);
-let select = document.getElementById('type');
-console.log(select);
 
-select.addEventListener("change", function () {
-    const valoreSelect = select.value;
-    console.log(valoreSelect);
-    const filteredIcons = icons.filter((element) => {
-        return element.type == valoreSelect;
-    });
-    print(filteredIcons);
+document.getElementById('type').addEventListener("click", function (event) {
+    // console.log(event.target.id);
+    //document.getElementById('${element.type}').value;
+
+    const valoreSelect = event.target.id;
+    if (valoreSelect == 'all') {
+        print(coloredArray);
+    } else {
+        console.log(valoreSelect);
+        const filteredIcons = coloredArray.filter((element) => {
+            return element.type == valoreSelect;
+        });
+        print(filteredIcons);
+    }
 
 });
+
+// console.log(types);
+// let select = document.getElementById('type');
+// console.log(select);
+
+// select.addEventListener("click", function () {
+//     document.getElementById('${element.type}').value;
+//     const valoreSelect = select;
+//     console.log(valoreSelect);
+//     const filteredIcons = icons.filter((element) => {
+//         return element.type == valoreSelect;
+//     });
+//     print(filteredIcons);
+
+// });
 
 
 //---------------------MILESTONE-1---------WITH FUNCTION---------------//
